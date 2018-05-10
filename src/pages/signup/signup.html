@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      Cadastro
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="page2">
+  <form id="cadastro-form1">
+    <ion-list id="cadastro-list1">
+      <ion-item id="cadastro-input1">
+        <ion-label>
+          Nome
+        </ion-label>
+        <ion-input type="text" placeholder="" name="first_name" [(ngModel)]="model.first_name"></ion-input>
+      </ion-item>
+      <ion-item id="cadastro-input2">
+        <ion-label>
+          Sobrenome
+        </ion-label>
+        <ion-input type="email" placeholder="" name="last_name" [(ngModel)]="model.last_name"></ion-input>
+      </ion-item>
+      <ion-item id="cadastro-input5">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder="" name="email" [(ngModel)]="model.email"></ion-input>
+      </ion-item>
+      <ion-item id="cadastro-input3">
+        <ion-label>
+          Senha
+        </ion-label>
+        <ion-input type="password" placeholder="" name="password" [(ngModel)]="model.password"></ion-input>
+      </ion-item>
+      <ion-item id="cadastro-input4">
+        <ion-label>
+          Senha (confirmação)
+        </ion-label>
+        <ion-input type="password" placeholder="" name="password_confirmation" [(ngModel)]="model.password_confirmation"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button id="cadastro-button1" ion-button (click)="signUp()" color="primary" block>
+      Criar Conta
+    </button>
+  </form>
+</ion-content>

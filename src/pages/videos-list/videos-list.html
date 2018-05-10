@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      Ayga Vídeos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="page-home">
+  <ion-searchbar placeholder="Busca" name="" id="home-search"></ion-searchbar>
+
+  <ion-list id="list-video">
+    <ion-item-sliding *ngFor="let video of videos">
+        <ion-item (click)="openVideo(video.id)">
+          <ion-thumbnail item-left>
+            <img src="{{ video.thumbanail }}" />
+          </ion-thumbnail>
+
+          <h2> {{ video.title }} </h2>
+          <p> {{ video.description }} </p>
+          
+          <span *ngFor="let tag of video.tags">
+            {{tag}}
+          </span>
+        </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="getVideos($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+      </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
