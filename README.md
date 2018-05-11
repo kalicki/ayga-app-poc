@@ -1,6 +1,11 @@
 # Descrição
 O App está baseado em Ionic with integração com API REST.
 
+# Caracteristicas:
+JDK 8
+Android Studio
+Ref: https://ionicframework.com/docs/intro/deploying/#requirements
+
 ## Estrutura
 As configurações de comunicação com a API está na pasta `/src/app/providers/api.ts`
 
@@ -25,9 +30,33 @@ Em caso de teste `localhost` entre dois ambientes simultaneo é necessário habi
 ## Execução
 `ionic serve` este comando irá executar o ionic em `http://localhost:8100/`
 
-## Emulator
-TODO
 ## Build
-TODO
-# Deploy
-TODO
+`ionic cordova emulate android`
+`ionic cordova emulate ios`
+
+## Emulator
+`ionic cordova emulate android`
+`ionic cordova emulate ios`
+
+## Deploy
+`ionic cordova build android`
+`ionic cordova build ios`
+
+### Help
+Em caso de erro:
+```
+* Where:
+Script '/Users/kalicki/Workspace/ayga/test-app/myTabs/platforms/android/CordovaLib/cordova.gradle' line: 68
+
+* What went wrong:
+A problem occurred evaluating project ':CordovaLib'.
+> No installed build tools found. Install the Android build tools version 19.1.0 or higher.
+````
+Solução:
+Trocar o USER pelo usuário da máquina (perfil)
+```
+export ANDROID_HOME=/Users/USER/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools
+export PATH=${PATH}:$ANDROID_HOME/platform-tools
+export PATH=${PATH}:$ANDROID_HOME/build-tools/25.0.3
+```
