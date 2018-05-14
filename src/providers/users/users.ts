@@ -35,7 +35,6 @@ export class UsersProvider {
           resolve(result);
         },
         (error) => {
-          console.log(error)
           reject(error);
         });
     });
